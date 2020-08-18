@@ -22,21 +22,22 @@ kubeadm config images pull
 
 
 echo "Kubeadm Init"
-kubeadm init
+kubeadm init --pod-network-cidr=10.244.0.0/16
 
-echo "############## Installing a CNI Network. ##############"
-sysctl net.bridge.bridge-nf-call-iptables=1
+# echo "############## Installing a CNI Network. ##############"
+# sysctl net.bridge.bridge-nf-call-iptables=1
 
-export kubever=$(kubectl version | base64 | tr -d '\n')
+# export kubever=$(kubectl version | base64 | tr -d '\n')
 
-kubectl apply -f "https://cloud.weave.works/k8s/net?k8s-version=$kubever"
+# kubectl apply -f "https://cloud.weave.works/k8s/net?k8s-version=$kubever"
 
-sleep 1m
 
 #mkdir -p $HOME/.kube
 #sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
 #sudo chown $(id -u):$(id -g) $HOME/.kube/config
 
-kubectl get nodes
+# kubectl get nodes
 
-kubectl get pods --all-namespaces
+# kubectl get pods --all-namespaces
+
+kubectl apply -f https://github.com/coreos/flannel/raw/master/Documentation/kube-flannel.yml

@@ -13,7 +13,7 @@ resource "aws_key_pair" "key" {
   key_name   = "k8s"
   public_key = file("k8s.pub")
 }
-
+//https://gist.github.com/rkaramandi/44c7cea91501e735ea99e356e9ae7883
 resource "aws_instance" "master_instance" {
   key_name      = aws_key_pair.key.key_name
   ami           = lookup(var.ami,var.aws_region)
@@ -40,7 +40,7 @@ resource "aws_security_group" "security_group" {
     from_port   = 22
     to_port     = 22
     protocol    = var.protocol
-    cidr_blocks = ["124.123.72.207/32"]
+    cidr_blocks = ["49.206.41.55/32"]
   }
 
   ingress {
