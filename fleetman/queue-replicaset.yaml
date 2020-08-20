@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: queue
+spec:
+  selectors:
+    matchLabels:
+      app: queue
+  replicas: 1
+  template:
+    metadata:
+      name: queue
+      labels:
+        app: queue
+    spec:
+      containers:
+      - name: queue
+        image: richardchesterwood/k8s-fleetman-queue:release1
+    

@@ -4,6 +4,7 @@ metadata:
   name: webapp
   labels:
     app: webapp
+    release: "0"
 spec:
   containers:
    - name: webapp
