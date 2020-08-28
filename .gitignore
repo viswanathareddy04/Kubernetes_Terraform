@@ -1,1 +1,4 @@
 .terraform
+k8s
+k8s.*
+terraform.*
