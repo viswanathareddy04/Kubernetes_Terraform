@@ -1,9 +1,9 @@
 variable "access_key" {
-  default = "XXXX"
+  default = "XXXXX"
 }
 
 variable "secret_key" {
-  default = "XXXXX"
+  default = "XXXX"
 }
 
 variable "instance_count" {
@@ -11,7 +11,7 @@ variable "instance_count" {
 }
 
 variable "worker_instance_type" {
-  default = "t2.nano"
+  default = "t2.micro"
 }
 
 variable "master_instance_type" {
