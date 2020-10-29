@@ -2,7 +2,7 @@ ssh aen@c1-master1
 cd ~/content/course/m4/demos/
 
 #Start up kubectl get events --watch and background it.
-kubectl get events --watch &
+----------------------------------------------------------------------------------------------------------------------------------------
 
 #Create a pod...we can see the scheduling, container pulling and container starting.
 kubectl apply -f pod.yaml

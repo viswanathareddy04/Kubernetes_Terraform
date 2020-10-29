@@ -1,5 +1,3 @@
-ssh aen@c1-master1
-cd ~/content/course/m2/demos
 
 #Get information about our current context, ensure we're logged into the correct cluster.
 kubectl config get-contexts

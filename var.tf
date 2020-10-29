@@ -7,7 +7,7 @@ variable "secret_key" {
 }
 
 variable "instance_count" {
-  default = "2"
+  default = "3"
 }
 
 variable "worker_instance_type" {
