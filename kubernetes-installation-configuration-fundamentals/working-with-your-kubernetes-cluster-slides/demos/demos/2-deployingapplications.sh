@@ -71,7 +71,7 @@ kubectl get endpoints hello-world
 curl http://$ENDPOINT:$TARGETORT
 
 #Using kubectl to generate yaml or json files of our imperitive configuration.
-kubectl get service hello-world -o yaml
+kubectl get service fleetman-webapp -o yaml
 kubectl get service hello-world -o json
 
 #UPDATE: --export has been deprecated. We'll use dry-run below to create these yaml files

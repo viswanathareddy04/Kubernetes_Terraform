@@ -4,6 +4,9 @@ ssh aen@c1-master1
 #Listing and Inspecting your cluster, pods, services and more.
 kubectl cluster-info
 
+#debug and diagnose cluster problems
+kubectl cluster-info dump
+
 #review status and roles
 kubectl get nodes
 
@@ -42,8 +45,8 @@ kubectl get no
 
 #Let's take a closer look at our nodes using Describe
 #Check out Name, Taints, Conditions, Addresses, System Info, Non-Terminated Pods, and Events
-kubectl describe nodes c1-master1
-kubectl describe nodes c1-node1
+kubectl describe nodes docker-desktop
+# kubectl describe nodes c1-node1
 
 #Ok, so now that we're tired of typing commands out, let's enable bash auto-complete of our kubectl commands
 sudo apt-get install bash-completion
