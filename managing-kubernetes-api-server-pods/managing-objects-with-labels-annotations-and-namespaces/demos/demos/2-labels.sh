@@ -13,7 +13,7 @@ kubectl get pods --show-labels
 kubectl describe pod nginx-pod-1 | head
 
 #Query labels and selectors
-kubectl get pods --selector tier=prod
+kubectl get pods --selector app=api-gateway
 kubectl get pods --selector tier=qa
 kubectl get pods -l tier=prod
 kubectl get pods -l tier=prod --show-labels

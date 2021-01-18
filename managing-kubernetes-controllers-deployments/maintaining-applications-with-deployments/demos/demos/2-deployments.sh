@@ -7,13 +7,12 @@ kubectl delete deployment hello-world
 kubectl delete service hello-world
 
 #Create our v1 deployment, then update it to v2
-kubectl apply -f deployment.yaml
-kubectl apply -f deployment.v2.yaml
+kubectl apply -f managing-kubernetes-controllers-deployments/maintaining-applications-with-deployments/demos/demos/deployment.yaml
+kubectl apply -f managing-kubernetes-controllers-deployments/maintaining-applications-with-deployments/demos/demos/deployment.v2.yaml
 
 
 #Observe behavior since new image wasn’t available, the ReplicaSet doesn't go below maxUnavailable
-kubectl apply -f deployment.broken.yaml
-
+kubectl apply -f managing-kubernetes-controllers-deployments/maintaining-applications-with-deployments/demos/demos/deployment.broken.yaml
 
 #Why isn't this finishing...? after progressDeadlineSeconds which we set to 10 seconds (defaults to 10 minutes)
 kubectl rollout status deployment hello-world
@@ -70,7 +69,7 @@ kubectl delete service hello-world
 ####QUICKLY run these two commands or as one block.####
 #Demo 3 - Controlling the rate and update strategy of a Deployment update.
 #Let's deploy a Deployment with Readiness Probes
-kubectl apply -f deployment.probes-1.yaml --record
+kubectl apply -f managing-kubernetes-controllers-deployments/maintaining-applications-with-deployments/demos/demos/deployment.probes-1.yaml
 
 
 #Available is still 0 because of our Readiness Probe's initialDelaySeconds is 10 seconds.

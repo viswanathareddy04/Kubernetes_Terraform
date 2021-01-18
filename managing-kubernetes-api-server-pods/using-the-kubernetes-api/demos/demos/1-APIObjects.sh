@@ -5,7 +5,7 @@ cd ~/content/course/02/demos
 kubectl config get-contexts
 
 #Change our context if needed.
-kubectl config use-context kubernetes-admin@kubernetes
+kubectl config use-context docker-desktop
 
 #Get information about the API Server for our current context, which should be kubernetes-admin@kubernetes
 kubectl cluster-info

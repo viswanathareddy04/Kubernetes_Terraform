@@ -9,7 +9,7 @@ kubectl get daemonsets --namespace kube-system kube-proxy
 
 
 #Let's create a DaemonSet with Pods on each node in our cluster...that's NOT the master
-kubectl apply -f DaemonSet.yaml
+kubectl apply -f managing-kubernetes-controllers-deployments/deploying-and-maintaining-applications-with-daemonsets-and-jobs/demos/demos/DaemonSet.yaml
 
 
 #So we'll get three since we have 3 workers and 1 master in our cluster and the master is set to run only system pods
@@ -20,6 +20,7 @@ kubectl get pods -o wide
 
 #Callout, labels, Desired/Current Nodes Scheduled. Pod Status and Template and Events.
 kubectl describe daemonsets hello-world | more 
+
 
 
 #Each Pods is created with our label, app=hello-world, controller-revision-hash and a pod-template-generation

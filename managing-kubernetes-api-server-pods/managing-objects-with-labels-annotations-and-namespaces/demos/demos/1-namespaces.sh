@@ -33,15 +33,15 @@ kubectl create namespace playground1
 kubectl create namespace Playground1
 
 #Declaratively create a namespace
-more namespace.yaml
-kubectl apply -f namespace.yaml
+more managing-kubernetes-api-server-pods/managing-objects-with-labels-annotations-and-namespaces/demos/demos/namespace.yaml
+kubectl apply -f managing-kubernetes-api-server-pods/managing-objects-with-labels-annotations-and-namespaces/demos/demos/namespace.yaml
 
 #Get a list of all the current namespaces
 kubectl get namespaces
 
 #Start a deployment into our playground1 namespace
-more deployment.yaml
-kubectl apply -f deployment.yaml
+more managing-kubernetes-api-server-pods/managing-objects-with-labels-annotations-and-namespaces/demos/demos/deployment.yaml
+kubectl apply -f managing-kubernetes-api-server-pods/managing-objects-with-labels-annotations-and-namespaces/demos/demos/deployment.yaml
 
 #Creating a resource imperitively
 kubectl run hello-world-pod \
@@ -57,7 +57,7 @@ kubectl get pods --namespace playground1
 kubectl get pods -n playground1
 
 #Get a list of all of the resources in our namespace...Deployment, ReplicaSet and Pods
-kubectl get all --namespace=playground1
+kubectl get all --namespace= playground1
 
 #Try to delete all the pods in our namespace...this will delete the single pod.
 #But the pods under the Deployment controller will be recreated.

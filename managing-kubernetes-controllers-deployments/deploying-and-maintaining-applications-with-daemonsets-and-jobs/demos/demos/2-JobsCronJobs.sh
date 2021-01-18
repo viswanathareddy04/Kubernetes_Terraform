@@ -4,7 +4,7 @@ cd ~/content/course/04/demos/
 #Demo 1 - Executing tasks with Jobs, check out the file job.yaml
 #Ensure you define a restartPolicy, the default of a Pod is Always, which is not compatible with a Job.
 #We'll need OnFailure or Never, let's look at OnFailure
-kubectl apply -f job.yaml
+kubectl apply -f managing-kubernetes-controllers-deployments/deploying-and-maintaining-applications-with-daemonsets-and-jobs/demos/demos/job.yaml
 
 
 #Follow job status with a watch
@@ -21,7 +21,7 @@ kubectl describe job hello-world-job
 
 #Get the logs from stdout from the Job Pod
 kubectl get pods -l job-name=hello-world-job 
-kubectl logs PASTE_POD_NAME_HERE
+kubectl logs hello-world-job-s722f
 
 
 #Our Job is completed, but it's up to use to delete the Pod or the Job.
@@ -36,7 +36,7 @@ kubectl get pods
 
 #Demo 2 - Show restartPolicy in action..., check out backoffLimit: 2 and restartPolicy: Never
 #We'll want to use Never so our pods aren't deleted after backoffLimit is reached.
-kubectl apply -f job-failure-OnFailure.yaml
+kubectl apply -f managing-kubernetes-controllers-deployments/deploying-and-maintaining-applications-with-daemonsets-and-jobs/demos/demos/job-failure-OnFailure.yaml
 
 
 #Let's look at the pods, enters a backoffloop after 2 crashes

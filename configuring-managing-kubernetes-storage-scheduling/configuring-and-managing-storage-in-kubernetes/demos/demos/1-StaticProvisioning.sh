@@ -27,7 +27,7 @@ sudo apt install nfs-common
 
 #On one of the Nodes, test out basic NFS access before moving on.
 ssh aen@c1-node1
-sudo mount -t nfs4 c1-storage:/export/volumes /mnt/
+sudo mount -t nfs4 172.31.16.221:/export/volumes /mnt/
 mount | grep nfs
 sudo umount /mnt
 exit

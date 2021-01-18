@@ -7,7 +7,9 @@ kubectl api-resources --api-group=apps
 #We can use explain to dig further into a specific API Object 
 #Check out KIND and VERSION, we'll see the API Group in the from group/version 
 #Follow the version specified in THAT deprecation warning. Ah...the one we should use.
+kubectl explain deployment | head 
 kubectl explain deployment --api-version apps/v1 | head
+kubectl explain deployment --api-version apps/v1beta2 | head 
 
 #Print the supported API versions on the API server again in the form group/version.
 #Here we see several api objects have several version, addmissionregistration, apiextensions all have v1 and v1beta1 versions

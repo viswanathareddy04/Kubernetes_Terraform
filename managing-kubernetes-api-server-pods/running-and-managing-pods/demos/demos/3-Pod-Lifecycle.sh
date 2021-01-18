@@ -6,7 +6,7 @@ kubectl get events --watch &
 clear
 
 #Create a pod...we can see the scheduling, container pulling and container starting.
-kubectl apply -f pod.yaml
+kubectl apply -f managing-kubernetes-api-server-pods/running-and-managing-pods/demos/demos/pod.yaml
 
 #We've used exec to launch a shell before, but we can use it to launch ANY program inside a container.
 #Let's use killall to kill the hello-app process inside our container
@@ -35,8 +35,8 @@ ctrl+c
 kubectl explain pods.spec.restartPolicy
 
 #Create our pods with the restart policy
-more pod-restart-policy.yaml
-kubectl apply -f pod-restart-policy.yaml
+more managing-kubernetes-api-server-pods/running-and-managing-pods/demos/demos/pod-restart-policy.yaml
+kubectl apply -f managing-kubernetes-api-server-pods/running-and-managing-pods/demos/demos/pod-restart-policy.yaml
 
 #Check to ensure both pods are up and running, we can see the restarts is 0
 kubectl get pods 

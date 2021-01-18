@@ -26,7 +26,7 @@ kubectl delete deployment hello-world
 #Demo 1.b - Declaratively
 #Simple Deployment
 #Let's start off declaratively creating a deployment with a service.
-kubectl apply -f deployment.yaml
+kubectl apply -f managing-kubernetes-controllers-deployments/deployments_basics/deployment.yaml
 
 
 #Check out the status of our deployment, which creates the ReplicaSet, which creates our Pods

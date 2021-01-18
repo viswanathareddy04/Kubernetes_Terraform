@@ -3,7 +3,7 @@ cd ~/content/course/03/demos/
 
 #Demo 1 - Updating a Deployment and checking our rollout status
 #Let's start off with rolling out v1
-kubectl apply -f deployment.yaml
+kubectl apply -f managing-kubernetes-controllers-deployments/maintaining-applications-with-deployments/demos/demos/deployment.yaml
 
 
 #Check the status of the deployment
@@ -11,7 +11,7 @@ kubectl get deployment hello-world
 
 
 #Now let's apply that deployment, run both this and line 18 at the same time.
-kubectl apply -f deployment.v2.yaml
+kubectl apply -f managing-kubernetes-controllers-deployments/maintaining-applications-with-deployments/demos/demos/deployment.v2.yaml
 
 
 #Let's check the status of that rollout, while the command blocking your deployment is in the Progressing status.

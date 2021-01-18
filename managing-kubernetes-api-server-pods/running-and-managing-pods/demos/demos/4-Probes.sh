@@ -6,11 +6,10 @@ kubectl get events --watch &
 clear
 
 #We have a single container pod app, in a Deployment that has both a liveness probe and a readiness probe
-more container-probes.yaml
-
+more managing-kubernetes-api-server-pods/running-and-managing-pods/demos/demos/container-probes.yaml
 #Send in our deployment, after 10 seconds, our liveness and readiness probes will fail.
 #The liveness probe will kill the current pod, and recreate one.
-kubectl apply -f container-probes.yaml
+kubectl apply -f managing-kubernetes-api-server-pods/running-and-managing-pods/demos/demos/container-probes.yaml
 
 #kill our watch
 fg

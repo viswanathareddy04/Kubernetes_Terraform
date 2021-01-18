@@ -19,12 +19,12 @@ spec:
         - containerPort: 8080
         livenessProbe:
           tcpSocket:
-            port: 8081
+            port: 8080
           initialDelaySeconds: 10
           periodSeconds: 5
         readinessProbe:
           httpGet:
             path: /
-            port: 8081
+            port: 8080
           initialDelaySeconds: 10
           periodSeconds: 5

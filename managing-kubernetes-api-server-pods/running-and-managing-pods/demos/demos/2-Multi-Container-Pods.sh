@@ -4,11 +4,12 @@ cd ~/content/course/04/demos/
 #Review the code for a multi-container pod, the volume webcontent is an emptyDir...essentially a temporary file system.
 #This is mounted in the containers at mountPath, in two different locations inside the container.
 #As producer writes data, consumer can see it immediatly since it's a shared file system.
-more multicontainer-pod.yaml
+more managing-kubernetes-api-server-pods/running-and-managing-pods/demos/demos/multicontainer-pod.yaml
 
 #Let's create our multi-container Pod.
-kubectl apply -f multicontainer-pod.yaml
+kubectl apply -f managing-kubernetes-api-server-pods/running-and-managing-pods/demos/demos/multicontainer-pod.yaml
 
+kubectl describe pod/multicontainer-pod -n default
 #Let's connect to our Pod...not specifying a name defaults to the first container in the configuration
 kubectl exec -it multicontainer-pod -- /bin/sh
 ls -la /var/log
@@ -28,5 +29,8 @@ curl http://localhost:8080
 #Kill our port-forward.
 fg
 ctrl+c
+
+
+kubectl delete pod multicontainer-pod --grace-period=30
 
 kubectl delete pod multicontainer-pod
